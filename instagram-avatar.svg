@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Parallax Parfums · Instagram avatar · 1080x1080.
+     Logo is kept inside a 480-radius inscribed circle so the IG circular crop
+     never clips it. Render to PNG at 1:1 (1080x1080) for upload.
+     Requires parallax-logo-r2.svg alongside at render time. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1080 1080" width="1080" height="1080">
+
+  <defs>
+    <mask id="igLogo" maskUnits="userSpaceOnUse">
+      <image xlink:href="parallax-logo-r2.svg" x="290" y="290" width="500" height="500"/>
+    </mask>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%"  stop-color="#1a1411"/>
+      <stop offset="100%" stop-color="#0d0a08"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark vignette background -->
+  <rect x="0" y="0" width="1080" height="1080" fill="url(#bgGlow)"/>
+
+  <!-- Faint copper ring sitting just inside the IG crop -->
+  <circle cx="540" cy="540" r="500" fill="none" stroke="#b87333" stroke-width="1" opacity="0.25"/>
+
+  <!-- Logo, tinted warm bone -->
+  <rect x="290" y="290" width="500" height="500" fill="#ede4d2" mask="url(#igLogo)"/>
+</svg>

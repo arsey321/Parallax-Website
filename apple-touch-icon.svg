@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Parallax Parfums · iOS home-screen icon · 180x180.
+     iOS rounds the corners automatically. Render to PNG at 1:1 (180x180)
+     for apple-touch-icon.png. Requires parallax-logo-r2.svg alongside. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <mask id="atiLogo" maskUnits="userSpaceOnUse">
+      <image xlink:href="parallax-logo-r2.svg" x="30" y="30" width="120" height="120"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="180" height="180" fill="#0d0a08"/>
+  <rect x="30" y="30" width="120" height="120" fill="#ede4d2" mask="url(#atiLogo)"/>
+</svg>

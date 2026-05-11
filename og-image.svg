@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Parallax Parfums · Open Graph share card · 1200x630.
+     Render to PNG at 1:1 (1200x630) for og-image.png.
+     Requires parallax-logo-r2.svg alongside at render time. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1200 630" width="1200" height="630">
+
+  <defs>
+    <!-- Use the logo as a luminance mask so we can recolor it. -->
+    <mask id="logoCream" maskUnits="userSpaceOnUse">
+      <image xlink:href="parallax-logo-r2.svg" x="180" y="155" width="240" height="240"/>
+    </mask>
+  </defs>
+
+  <!-- Two halves: umbra (left), lucent (right) -->
+  <rect x="0"   y="0" width="600"  height="630" fill="#0d0a08"/>
+  <rect x="600" y="0" width="600"  height="630" fill="#f4f1ea"/>
+
+  <!-- Hairline divider, copper -->
+  <line x1="600" y1="56" x2="600" y2="574" stroke="#b87333" stroke-width="1" opacity="0.35"/>
+
+  <!-- Logo mark on left, tinted warm bone -->
+  <rect x="180" y="155" width="240" height="240" fill="#ede4d2" mask="url(#logoCream)"/>
+
+  <!-- Wordmark on left, large -->
+  <text x="300" y="455" font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="56" fill="#ede4d2" text-anchor="middle" letter-spacing="6">PARALLAX</text>
+  <text x="300" y="490" font-family="'JetBrains Mono', Menlo, monospace"
+        font-size="13" fill="#a89881" text-anchor="middle" letter-spacing="5">PARFUMS</text>
+
+  <!-- Tagline on right -->
+  <text x="900" y="270" font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="62" fill="#1a1814" text-anchor="middle" font-style="italic">viewed from</text>
+  <text x="900" y="350" font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="62" fill="#1a1814" text-anchor="middle" font-style="italic">two angles.</text>
+  <text x="900" y="420" font-family="'JetBrains Mono', Menlo, monospace"
+        font-size="12" fill="#6e6757" text-anchor="middle" letter-spacing="4">A BESPOKE FRAGRANCE HOUSE</text>
+
+  <!-- Bottom strip, spanning both halves -->
+  <text x="300" y="565" font-family="'JetBrains Mono', Menlo, monospace"
+        font-size="11" fill="#a89881" text-anchor="middle" letter-spacing="4">SANTA CLARA · CALIFORNIA</text>
+  <text x="900" y="565" font-family="'JetBrains Mono', Menlo, monospace"
+        font-size="11" fill="#6e6757" text-anchor="middle" letter-spacing="4">SAN FRANCISCO BAY AREA</text>
+
+  <text x="600" y="605" font-family="'JetBrains Mono', Menlo, monospace"
+        font-size="11" fill="#8a8275" text-anchor="middle" letter-spacing="3">parallaxparfums.com</text>
+</svg>
