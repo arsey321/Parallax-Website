@@ -101,7 +101,8 @@
 }
 
 .story-hero__eyebrow {
-  color: var(--accent);
+  color: #d9d3c4;
+  mix-blend-mode: difference;
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeUp 900ms 200ms forwards;
@@ -137,7 +138,7 @@
   color: #d9d3c4;
   mix-blend-mode: difference;
 }
-.story-hero__quote em { color: #b87333; font-style: italic; }
+.story-hero__quote em { color: #d9d3c4; font-style: italic; }
 .story-hero__mark {
   position: absolute;
   top: -56px; left: 50%;
@@ -145,13 +146,15 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 88px;
   font-style: italic;
-  color: var(--accent);
+  color: #d9d3c4;
+  mix-blend-mode: difference;
   line-height: 1;
 }
 
 .story-hero__rule {
   width: 80px; height: 1px;
-  background: var(--accent);
+  background: #d9d3c4;
+  mix-blend-mode: difference;
   margin: 0 auto 40px;
   opacity: 0;
   animation: fadeUp 900ms 1000ms forwards;
@@ -166,7 +169,8 @@
 .story-hero__index a {
   display: inline-flex; align-items: baseline; gap: 8px;
   padding: 8px 4px;
-  color: var(--accent);
+  color: #d9d3c4;
+  mix-blend-mode: difference;
   transition: color 300ms;
 }
 .story-hero__index a span {
@@ -176,7 +180,6 @@
 }
 .story-hero__index a:hover {
   color: #ede4d2;
-  mix-blend-mode: difference;
 }
 
 /* ============================================================
