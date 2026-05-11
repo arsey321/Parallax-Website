@@ -64,11 +64,14 @@
 
 <!-- ============ HOME / HERO ============ -->
 <section class="hero" id="home">
-  <!-- Parallax layers -->
-  <div class="hero__bg" data-parallax="0.3">
+  <!-- Split layers: cursor drives --split, revealing more umbra or lucent -->
+  <div class="hero__bg">
     <div class="hero__bg-umbra"></div>
     <div class="hero__bg-lucent"></div>
-    <div class="hero__divider" aria-hidden="true"></div>
+    <div class="hero__divider" aria-hidden="true">
+      <span class="hero__divider-tick hero__divider-tick--top" aria-hidden="true"></span>
+      <span class="hero__divider-tick hero__divider-tick--bot" aria-hidden="true"></span>
+    </div>
   </div>
 
   <div class="hero__grid" aria-hidden="true">
@@ -77,7 +80,13 @@
     <span></span><span></span>
   </div>
 
-  <div class="hero__inner" data-parallax="0.08">
+  <span class="hero__hint mono" aria-hidden="true">
+    <span class="hero__hint-arrow hero__hint-arrow--l">←</span>
+    <span class="hero__hint-text">move to shift perspective</span>
+    <span class="hero__hint-arrow hero__hint-arrow--r">→</span>
+  </span>
+
+  <div class="hero__inner">
     <div class="hero__meta">
       <span class="mono">FRG/24 · SANTA CLARA · EST. 2024</span>
     </div>
