@@ -131,16 +131,19 @@
   margin: 0 auto 64px;
   opacity: 0;
   animation: fadeUp 1100ms 700ms forwards;
+  /* Blend at the wrapper level: fadeUp ends with transform: translateY(0)
+     which creates a stacking context, so children can't blend through it.
+     Apply mix-blend-mode here instead. */
+  color: #d9d3c4;
+  mix-blend-mode: difference;
 }
 .story-hero__quote p {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(22px, 2.5vw, 32px);
   font-weight: 300;
   line-height: 1.35;
-  color: #d9d3c4;
-  mix-blend-mode: difference;
 }
-.story-hero__quote em { color: #d9d3c4; font-style: italic; }
+.story-hero__quote em { font-style: italic; }
 .story-hero__mark {
   position: absolute;
   top: -56px; left: 50%;
@@ -148,8 +151,6 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 88px;
   font-style: italic;
-  color: #d9d3c4;
-  mix-blend-mode: difference;
   line-height: 1;
 }
 
@@ -167,12 +168,13 @@
   gap: 4px 28px;
   opacity: 0;
   animation: fadeUp 900ms 1200ms forwards;
+  /* See note on .story-hero__quote — blend at wrapper level. */
+  color: #d9d3c4;
+  mix-blend-mode: difference;
 }
 .story-hero__index a {
   display: inline-flex; align-items: baseline; gap: 8px;
   padding: 8px 4px;
-  color: #d9d3c4;
-  mix-blend-mode: difference;
   transition: color 300ms;
 }
 .story-hero__index a span {
