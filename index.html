@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="lucent">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Parallax Parfums — A Bespoke Fragrance House in Santa Clara</title>
+<meta name="description" content="Parallax Parfums is an independent, engineer-founded fragrance house in Santa Clara, California. High-concentration parfums explored from two perspectives: the Umbra Reserve and the Lucent Reserve. Find us at Bay Area farmers markets and pop-ups." />
+<meta name="keywords" content="niche perfume Santa Clara, local fragrance house Bay Area, independent perfumer Silicon Valley, artisan parfum, farmers market perfume" />
+
+<!-- Local-business structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Parallax Parfums",
+  "description": "Independent fragrance house in Santa Clara specializing in high-concentration parfums.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Santa Clara", "addressRegion": "CA", "addressCountry": "US" },
+  "areaServed": "San Francisco Bay Area",
+  "url": "https://parallaxparfums.com"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ FIXED CHROME ============ -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav__brand" aria-label="Parallax Parfums home">
+    <svg class="nav__logo" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="15" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1"/>
+      <circle cx="25" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1"/>
+    </svg>
+    <span class="nav__wordmark">Parallax</span>
+  </a>
+
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#collections">Collections</a>
+    <a href="story.html">The Story</a>
+    <a href="#events">Where to Find Us</a>
+    <a href="#reserve">Join the Reserve</a>
+  </nav>
+
+  <button class="nav__shift" id="modeToggle" aria-label="Shift perspective between Lucent and Umbra">
+    <span class="nav__shift-track">
+      <span class="nav__shift-label nav__shift-label--lucent">LUCENT</span>
+      <span class="nav__shift-label nav__shift-label--umbra">UMBRA</span>
+      <span class="nav__shift-thumb" aria-hidden="true"></span>
+    </span>
+  </button>
+</header>
+
+<!-- Coordinate marker that follows scroll (engineering signal) -->
+<div class="coords" aria-hidden="true">
+  <span class="coords__label">PARALLAX</span>
+  <span class="coords__val" id="coordsVal">37.3541° N / 121.9552° W</span>
+</div>
+
+<main>
+
+<!-- ============ HOME / HERO ============ -->
+<section class="hero" id="home">
+  <!-- Parallax layers -->
+  <div class="hero__bg" data-parallax="0.3">
+    <div class="hero__bg-umbra"></div>
+    <div class="hero__bg-lucent"></div>
+    <div class="hero__divider" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero__grid" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span>
+  </div>
+
+  <div class="hero__inner" data-parallax="0.08">
+    <div class="hero__meta">
+      <span class="mono">FRG/24 · SANTA CLARA · EST. 2024</span>
+    </div>
+
+    <h1 class="hero__title">
+      <span class="hero__title-line">The same scent,</span>
+      <span class="hero__title-line hero__title-line--italic">viewed from</span>
+      <span class="hero__title-line">two angles.</span>
+    </h1>
+
+    <p class="hero__lede">
+      Parallax is the apparent shift of an object when seen from a different line of sight.
+      We bottle that shift. Two reserves. One precise hand.
+    </p>
+
+    <div class="hero__paths">
+      <a href="#umbra" class="path path--umbra">
+        <span class="path__num mono">01 / UMBRA</span>
+        <span class="path__name">The Shadows</span>
+        <span class="path__arrow" aria-hidden="true">↓</span>
+      </a>
+      <a href="#lucent" class="path path--lucent">
+        <span class="path__num mono">02 / LUCENT</span>
+        <span class="path__name">The Light</span>
+        <span class="path__arrow" aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Floating "next pop-up" pill -->
+  <a href="#events" class="next-popup" aria-label="Skip to next pop-up event">
+    <span class="next-popup__dot" aria-hidden="true"></span>
+    <span class="next-popup__label mono">NEXT POP-UP</span>
+    <span class="next-popup__detail">SAT 16 MAY · Mountain View Farmers Market</span>
+    <span class="next-popup__arrow" aria-hidden="true">→</span>
+  </a>
+</section>
+
+
+<!-- ============ STORY ============ -->
+<section class="story" id="story">
+  <div class="story__rail">
+    <span class="mono">II</span>
+    <span class="story__rail-label">The Engineer's Approach</span>
+  </div>
+
+  <div class="story__inner">
+    <div class="story__copy" data-parallax="0.04">
+      <p class="eyebrow mono">// THE STORY</p>
+      <h2 class="display">
+        A great fragrance is<br/>
+        <em>invisible architecture.</em>
+      </h2>
+
+      <p class="story__para">
+        Parallax was founded by an engineer. The bench in Santa Clara is run on
+        the same logic as any other &mdash; calipers, scales, log books &mdash;
+        only what we&apos;re measuring is volatility, not torque.
+      </p>
+
+      <p class="story__para">
+        We formulate at <em>parfum</em> concentration (20&ndash;30% aromatic compounds, not
+        the 8&ndash;15% on the retail shelf), in small batches, by hand. Less ethanol.
+        More intention.
+      </p>
+
+      <a href="story.html" class="story__more mono">
+        Read the full story <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <aside class="spec" data-parallax="-0.05" aria-label="Technical specifications">
+      <div class="spec__header mono">SPECIFICATION SHEET</div>
+
+      <dl class="spec__list">
+        <div><dt class="mono">Concentration</dt><dd>20&ndash;30% / Parfum (Extrait)</dd></div>
+        <div><dt class="mono">Base</dt><dd>Organic cane ethanol, undenatured</dd></div>
+        <div><dt class="mono">Batch size</dt><dd>≤ 200 flacons</dd></div>
+        <div><dt class="mono">Macer. time</dt><dd>6 weeks, minimum</dd></div>
+        <div><dt class="mono">Studio</dt><dd>Santa Clara, CA</dd></div>
+        <div><dt class="mono">Distribution</dt><dd>Direct, in person, by hand</dd></div>
+      </dl>
+
+      <div class="spec__signoff">
+        <div class="mono">FOUNDER · PERFUMER</div>
+        <div class="spec__sig">— R. Vance</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+
+<!-- ============ COLLECTIONS ============ -->
+<section class="collections" id="collections">
+  <header class="section-head">
+    <p class="eyebrow mono">// III · THE COLLECTIONS</p>
+    <h2 class="display section-head__title">Two reserves.</h2>
+    <p class="section-head__sub">
+      Each pair below is composed around the same emotional axis &mdash; one in shadow,
+      one in light. Read them side by side.
+    </p>
+  </header>
+
+  <!-- UMBRA RESERVE -->
+  <article class="reserve reserve--umbra" id="umbra">
+    <div class="reserve__plate" data-parallax="0.06" aria-hidden="true">
+      <div class="reserve__flacon reserve__flacon--umbra">
+        <svg viewBox="0 0 200 320" class="flacon-svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="umbraGlass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1a1411"/>
+              <stop offset="55%" stop-color="#2b2017"/>
+              <stop offset="100%" stop-color="#0a0807"/>
+            </linearGradient>
+            <linearGradient id="umbraShine" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(184,115,51,0.5)"/>
+              <stop offset="50%" stop-color="rgba(184,115,51,0)"/>
+            </linearGradient>
+          </defs>
+          <!-- collar -->
+          <rect x="82" y="20" width="36" height="20" fill="#1a1411" stroke="#3d2a1a" stroke-width="0.5"/>
+          <!-- cap -->
+          <rect x="70" y="0" width="60" height="28" fill="#0d0a08" stroke="#b87333" stroke-width="0.5"/>
+          <!-- body -->
+          <rect x="35" y="40" width="130" height="260" rx="3" fill="url(#umbraGlass)" stroke="#3d2a1a" stroke-width="0.8"/>
+          <rect x="35" y="40" width="130" height="260" rx="3" fill="url(#umbraShine)"/>
+          <!-- label -->
+          <rect x="55" y="130" width="90" height="80" fill="none" stroke="rgba(184,115,51,0.4)" stroke-width="0.5"/>
+          <text x="100" y="160" text-anchor="middle" fill="#b87333" font-family="JetBrains Mono" font-size="6" letter-spacing="2">UMBRA</text>
+          <text x="100" y="172" text-anchor="middle" fill="#b87333" font-family="JetBrains Mono" font-size="4" letter-spacing="1">RESERVE</text>
+          <line x1="65" y1="180" x2="135" y2="180" stroke="rgba(184,115,51,0.3)" stroke-width="0.3"/>
+          <text x="100" y="195" text-anchor="middle" fill="rgba(184,115,51,0.7)" font-family="Cormorant Garamond" font-size="8" font-style="italic">parfum</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="reserve__content">
+      <div class="reserve__head">
+        <span class="mono reserve__num">01 / UMBRA RESERVE</span>
+        <h3 class="display reserve__name">The Shadows.</h3>
+        <p class="reserve__intent">
+          Light-absorbing. Resinous. Composed in the register of a low cello string.
+          Worn after the sun has gone.
+        </p>
+      </div>
+
+      <!-- Fragrance cards -->
+      <div class="frags">
+
+        <div class="frag">
+          <div class="frag__head">
+            <span class="mono frag__sku">UMB.001</span>
+            <h4 class="frag__name">Charwood &amp; Saffron</h4>
+            <p class="frag__feel">A library after the fire has burned low.</p>
+          </div>
+          <div class="frag__pyramid">
+            <div class="frag__note"><span class="mono">TOP</span><span>Pink pepper · Saffron · Bitter orange</span></div>
+            <div class="frag__note"><span class="mono">HEART</span><span>Rose absolute · Oud · Smoked tea</span></div>
+            <div class="frag__note"><span class="mono">BASE</span><span>Charred birch · Labdanum · Castoreum</span></div>
+          </div>
+          <a href="#events" class="frag__cta">Where to Experience <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="frag">
+          <div class="frag__head">
+            <span class="mono frag__sku">UMB.002</span>
+            <h4 class="frag__name">Vetiver Noir</h4>
+            <p class="frag__feel">Wet earth turned under a winter moon.</p>
+          </div>
+          <div class="frag__pyramid">
+            <div class="frag__note"><span class="mono">TOP</span><span>Black cardamom · Grapefruit zest</span></div>
+            <div class="frag__note"><span class="mono">HEART</span><span>Haitian vetiver · Iris root · Cypriol</span></div>
+            <div class="frag__note"><span class="mono">BASE</span><span>Patchouli · Vanilla absolute · Ambergris</span></div>
+          </div>
+          <a href="#events" class="frag__cta">Where to Experience <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="frag">
+          <div class="frag__head">
+            <span class="mono frag__sku">UMB.003</span>
+            <h4 class="frag__name">Resin Cathedral</h4>
+            <p class="frag__feel">Frankincense in a stone room. Devotional, not heavy.</p>
+          </div>
+          <div class="frag__pyramid">
+            <div class="frag__note"><span class="mono">TOP</span><span>Elemi · Bergamot · Pink peppercorn</span></div>
+            <div class="frag__note"><span class="mono">HEART</span><span>Olibanum · Myrrh · Beeswax</span></div>
+            <div class="frag__note"><span class="mono">BASE</span><span>Benzoin · Tonka · Cedarwood atlas</span></div>
+          </div>
+          <a href="#events" class="frag__cta">Where to Experience <span aria-hidden="true">→</span></a>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- Divider with parallax label -->
+  <div class="reserve-divider" aria-hidden="true">
+    <span class="mono">— shift perspective —</span>
+  </div>
+
+  <!-- LUCENT RESERVE -->
+  <article class="reserve reserve--lucent" id="lucent">
+    <div class="reserve__plate" data-parallax="0.06" aria-hidden="true">
+      <div class="reserve__flacon reserve__flacon--lucent">
+        <svg viewBox="0 0 200 320" class="flacon-svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="lucentGlass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f4f1ea"/>
+              <stop offset="55%" stop-color="#e9e3d5"/>
+              <stop offset="100%" stop-color="#d9d3c4"/>
+            </linearGradient>
+            <linearGradient id="lucentShine" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.7)"/>
+              <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+            </linearGradient>
+          </defs>
+          <rect x="82" y="20" width="36" height="20" fill="#ddd6c5" stroke="#aaa28d" stroke-width="0.5"/>
+          <rect x="70" y="0" width="60" height="28" fill="#c9c2b1" stroke="#8a8275" stroke-width="0.5"/>
+          <rect x="35" y="40" width="130" height="260" rx="3" fill="url(#lucentGlass)" stroke="#aaa28d" stroke-width="0.8"/>
+          <rect x="35" y="40" width="130" height="260" rx="3" fill="url(#lucentShine)"/>
+          <rect x="55" y="130" width="90" height="80" fill="none" stroke="rgba(80,72,55,0.3)" stroke-width="0.5"/>
+          <text x="100" y="160" text-anchor="middle" fill="#504837" font-family="JetBrains Mono" font-size="6" letter-spacing="2">LUCENT</text>
+          <text x="100" y="172" text-anchor="middle" fill="#504837" font-family="JetBrains Mono" font-size="4" letter-spacing="1">RESERVE</text>
+          <line x1="65" y1="180" x2="135" y2="180" stroke="rgba(80,72,55,0.3)" stroke-width="0.3"/>
+          <text x="100" y="195" text-anchor="middle" fill="rgba(80,72,55,0.7)" font-family="Cormorant Garamond" font-size="8" font-style="italic">parfum</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="reserve__content">
+      <div class="reserve__head">
+        <span class="mono reserve__num">02 / LUCENT RESERVE</span>
+        <h3 class="display reserve__name">The Light.</h3>
+        <p class="reserve__intent">
+          Light-reflecting. Transparent. Composed in the register of struck glass.
+          Worn before the sun has gone.
+        </p>
+      </div>
+
+      <div class="frags">
+
+        <div class="frag">
+          <div class="frag__head">
+            <span class="mono frag__sku">LUC.001</span>
+            <h4 class="frag__name">Linen &amp; Bergamot</h4>
+            <p class="frag__feel">A shirt off the line. Sea air still inside the cotton.</p>
+          </div>
+          <div class="frag__pyramid">
+            <div class="frag__note"><span class="mono">TOP</span><span>Italian bergamot · Yuzu · Petitgrain</span></div>
+            <div class="frag__note"><span class="mono">HEART</span><span>White tea · Orris · Lily</span></div>
+            <div class="frag__note"><span class="mono">BASE</span><span>White musk · Cashmeran · Hinoki</span></div>
+          </div>
+          <a href="#events" class="frag__cta">Where to Experience <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="frag">
+          <div class="frag__head">
+            <span class="mono frag__sku">LUC.002</span>
+            <h4 class="frag__name">Glasswork</h4>
+            <p class="frag__feel">A studio at noon. Cold sunlight on a table.</p>
+          </div>
+          <div class="frag__pyramid">
+            <div class="frag__note"><span class="mono">TOP</span><span>Aldehyde C-12 · Lemon verbena · Mint</span></div>
+            <div class="frag__note"><span class="mono">HEART</span><span>Iris pallida · Magnolia · Violet leaf</span></div>
+            <div class="frag__note"><span class="mono">BASE</span><span>Sandalwood · Ambrette seed · Soft suede</span></div>
+          </div>
+          <a href="#events" class="frag__cta">Where to Experience <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="frag">
+          <div class="frag__head">
+            <span class="mono frag__sku">LUC.003</span>
+            <h4 class="frag__name">Saltflower</h4>
+            <p class="frag__feel">Coast wind through an almond grove.</p>
+          </div>
+          <div class="frag__pyramid">
+            <div class="frag__note"><span class="mono">TOP</span><span>Sea salt accord · Pink grapefruit · Coriander</span></div>
+            <div class="frag__note"><span class="mono">HEART</span><span>Neroli · Orange blossom · Almond milk</span></div>
+            <div class="frag__note"><span class="mono">BASE</span><span>Driftwood · Ambrox · Vanilla pod</span></div>
+          </div>
+          <a href="#events" class="frag__cta">Where to Experience <span aria-hidden="true">→</span></a>
+        </div>
+
+      </div>
+    </div>
+  </article>
+</section>
+
+
+<!-- ============ EVENTS ============ -->
+<section class="events" id="events">
+  <header class="section-head section-head--center">
+    <p class="eyebrow mono">// IV · WHERE TO FIND US</p>
+    <h2 class="display">There is no shipping. Only meeting.</h2>
+    <p class="section-head__sub">
+      Every flacon is sold by hand. Come breathe in person &mdash; we set up across the
+      South Bay and Peninsula most weekends.
+    </p>
+  </header>
+
+  <ul class="event-list">
+
+    <li class="event">
+      <div class="event__date">
+        <span class="event__day mono">SAT</span>
+        <span class="event__num">16</span>
+        <span class="event__month mono">MAY · 26</span>
+      </div>
+      <div class="event__body">
+        <h3 class="event__name">Mountain View Farmers Market</h3>
+        <p class="event__where">Caltrain Station Parking Lot · 600 W Evelyn Ave, Mountain View</p>
+        <p class="event__hours mono">09:00 — 13:00 · Booth 24</p>
+      </div>
+      <span class="event__status event__status--next">NEXT</span>
+    </li>
+
+    <li class="event">
+      <div class="event__date">
+        <span class="event__day mono">SUN</span>
+        <span class="event__num">24</span>
+        <span class="event__month mono">MAY · 26</span>
+      </div>
+      <div class="event__body">
+        <h3 class="event__name">Santa Clara Artisan Fair</h3>
+        <p class="event__where">Central Park Pavilion · 909 Kiely Blvd, Santa Clara</p>
+        <p class="event__hours mono">10:00 — 16:00 · Booth A-14</p>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="event__date">
+        <span class="event__day mono">SAT</span>
+        <span class="event__num">06</span>
+        <span class="event__month mono">JUN · 26</span>
+      </div>
+      <div class="event__body">
+        <h3 class="event__name">Palo Alto Saturday Market</h3>
+        <p class="event__where">Gilman Street · Downtown Palo Alto</p>
+        <p class="event__hours mono">08:00 — 12:00 · Booth 11</p>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="event__date">
+        <span class="event__day mono">SUN</span>
+        <span class="event__num">14</span>
+        <span class="event__month mono">JUN · 26</span>
+      </div>
+      <div class="event__body">
+        <h3 class="event__name">Campbell Makers Pop-Up</h3>
+        <p class="event__where">Ainsley House Grounds · 300 Grant St, Campbell</p>
+        <p class="event__hours mono">11:00 — 17:00 · Tent 03</p>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="event__date">
+        <span class="event__day mono">SAT</span>
+        <span class="event__num">27</span>
+        <span class="event__month mono">JUN · 26</span>
+      </div>
+      <div class="event__body">
+        <h3 class="event__name">San Jose Night Market</h3>
+        <p class="event__where">San Pedro Square · 87 N San Pedro St, San Jose</p>
+        <p class="event__hours mono">17:00 — 22:00 · Booth 42</p>
+      </div>
+    </li>
+
+  </ul>
+
+  <p class="events__note mono">
+    Schedule updates weekly. Subscribe below to be notified of additions and weather changes.
+  </p>
+</section>
+
+
+<!-- ============ RESERVE / NEWSLETTER ============ -->
+<section class="reserve-cta" id="reserve">
+  <div class="reserve-cta__inner">
+    <p class="eyebrow mono">// V · JOIN THE RESERVE</p>
+    <h2 class="display reserve-cta__title">
+      Be the first to know <em>where</em><br/>and, eventually, <em>when</em>.
+    </h2>
+    <p class="reserve-cta__sub">
+      The Reserve is our private list. You&apos;ll receive a brief note before each
+      pop-up, and a single quiet message the day we open online shipping.
+    </p>
+
+    <form class="reserve-form" onsubmit="event.preventDefault(); this.querySelector('.reserve-form__msg').classList.add('is-on');">
+      <label class="visually-hidden" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">
+        <span>Subscribe</span>
+        <span aria-hidden="true">→</span>
+      </button>
+      <p class="reserve-form__msg mono">Thank you. You&apos;re on the list.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__col">
+      <svg class="footer__logo" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="15" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="25" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <p class="footer__tag">
+        A bespoke fragrance house.<br/>
+        Composed in Santa Clara, California.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="mono">Explore</h4>
+      <a href="#umbra">Umbra Reserve</a>
+      <a href="#lucent">Lucent Reserve</a>
+      <a href="story.html">The Story</a>
+      <a href="#events">Events</a>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="mono">Contact</h4>
+      <a href="mailto:hello@parallaxparfums.com">hello@parallaxparfums.com</a>
+      <a href="#">Instagram</a>
+      <a href="#">Trade enquiries</a>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="mono">Coordinates</h4>
+      <p class="mono footer__coords">37.3541° N<br/>121.9552° W<br/>Santa Clara, CA</p>
+    </div>
+  </div>
+
+  <div class="footer__base">
+    <span class="mono">© 2026 Parallax Parfums · All rights reserved.</span>
+    <span class="mono">FRG.24 · v1.0</span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
