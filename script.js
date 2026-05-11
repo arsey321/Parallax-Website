@@ -55,7 +55,6 @@
     };
 
     hero.addEventListener('mousemove', (e) => setTargetFromX(e.clientX), { passive: true });
-    hero.addEventListener('mouseleave', () => { targetSplit = 50; });
     hero.addEventListener('touchstart', (e) => {
       if (e.touches[0]) setTargetFromX(e.touches[0].clientX);
     }, { passive: true });
