@@ -148,7 +148,7 @@ em, .display em {
   z-index: 1;
   transition: color 400ms;
 }
-.nav__shift-label--lucent { color: var(--ink); }
+.nav__shift-label--lucent { color: var(--bg); }
 .nav__shift-label--umbra { color: var(--ink-soft); }
 [data-mode="umbra"] .nav__shift-label--lucent { color: var(--ink-soft); }
 [data-mode="umbra"] .nav__shift-label--umbra { color: var(--ink); }
