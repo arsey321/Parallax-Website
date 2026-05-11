@@ -103,7 +103,15 @@ em, .display em {
 }
 
 .nav__brand { display: flex; align-items: center; gap: 12px; }
-.nav__logo { width: 36px; height: 36px; color: var(--ink); }
+.nav__logo {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-color: var(--ink);
+  -webkit-mask: url(parallax-logo-r2.svg) center / contain no-repeat;
+          mask: url(parallax-logo-r2.svg) center / contain no-repeat;
+  transition: background-color 400ms ease;
+}
 .nav__wordmark {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
@@ -848,7 +856,16 @@ em, .display em {
   gap: 64px;
   max-width: 1280px; margin: 0 auto 64px;
 }
-.footer__logo { width: 36px; height: 36px; color: var(--ink); margin-bottom: 20px; }
+.footer__logo {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 20px;
+  background-color: var(--ink);
+  -webkit-mask: url(parallax-logo-r2.svg) center / contain no-repeat;
+          mask: url(parallax-logo-r2.svg) center / contain no-repeat;
+  transition: background-color 400ms ease;
+}
 .footer__tag {
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px; font-style: italic;
