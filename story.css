@@ -38,9 +38,9 @@
   background: var(--ink);
   color: var(--bg);
 }
-.btn--primary:hover { background: var(--accent); border-color: var(--accent); }
+@media (hover: hover) { .btn--primary:hover { background: var(--accent); border-color: var(--accent); } }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+@media (hover: hover) { .btn--ghost:hover { border-color: var(--accent); color: var(--accent); } }
 
 
 /* ============================================================
@@ -182,8 +182,8 @@
   font-size: 9px;
   opacity: 0.6;
 }
-.story-hero__index a:hover {
-  color: #ede4d2;
+@media (hover: hover) {
+  .story-hero__index a:hover { color: #ede4d2; }
 }
 
 /* ============================================================
@@ -380,8 +380,10 @@
   color: var(--local-accent);
   transition: background 400ms, color 400ms;
 }
-.dual-card--umbra .dual-card__cta:hover { background: var(--local-accent); color: #0d0a08; }
-.dual-card--lucent .dual-card__cta:hover { background: var(--local-accent); color: #f4f1ea; }
+@media (hover: hover) {
+  .dual-card--umbra .dual-card__cta:hover { background: var(--local-accent); color: #0d0a08; }
+  .dual-card--lucent .dual-card__cta:hover { background: var(--local-accent); color: #f4f1ea; }
+}
 
 .duality__footer {
   max-width: 880px; margin: 64px auto 0;
@@ -484,7 +486,7 @@
   text-align: left;
   transition: background 400ms;
 }
-.spec-card:hover { background: var(--bg-soft); }
+@media (hover: hover) { .spec-card:hover { background: var(--bg-soft); } }
 .spec-card__num { color: var(--accent); margin-bottom: 16px; display: inline-block; }
 .spec-card__title {
   font-family: 'JetBrains Mono', monospace;
