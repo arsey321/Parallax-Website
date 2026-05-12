@@ -38,9 +38,9 @@
   background: var(--ink);
   color: var(--bg);
 }
-.btn--primary:hover { background: var(--accent); border-color: var(--accent); }
+@media (hover: hover) { .btn--primary:hover { background: var(--accent); border-color: var(--accent); } }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+@media (hover: hover) { .btn--ghost:hover { border-color: var(--accent); color: var(--accent); } }
 
 
 /* ============================================================
@@ -52,6 +52,8 @@
   display: flex; align-items: center; justify-content: center;
   padding: 160px 48px 100px;
   overflow: hidden;
+  /* Isolate so mix-blend-mode children can blend with the split bg below. */
+  isolation: isolate;
 }
 
 .story-hero__bg {
@@ -91,17 +93,18 @@
 .ch--br { bottom: 0; right: 0; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
 
 .story-hero__inner {
-  position: relative; z-index: 2;
+  position: relative;
   max-width: 920px;
   text-align: center;
 
-  /* Mix-blend keeps text legible across the split background.
-     Each line of text inverts against the half it's on. */
+  /* No z-index here on purpose: it would create a stacking context that
+     prevents child mix-blend-mode from reaching the split bg below. */
   color: var(--accent);
 }
 
 .story-hero__eyebrow {
-  color: var(--accent);
+  color: #d9d3c4;
+  mix-blend-mode: difference;
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeUp 900ms 200ms forwards;
@@ -128,16 +131,19 @@
   margin: 0 auto 64px;
   opacity: 0;
   animation: fadeUp 1100ms 700ms forwards;
+  /* Blend at the wrapper level: fadeUp ends with transform: translateY(0)
+     which creates a stacking context, so children can't blend through it.
+     Apply mix-blend-mode here instead. */
+  color: #d9d3c4;
+  mix-blend-mode: difference;
 }
 .story-hero__quote p {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(22px, 2.5vw, 32px);
   font-weight: 300;
   line-height: 1.35;
-  color: #d9d3c4;
-  mix-blend-mode: difference;
 }
-.story-hero__quote em { color: #b87333; font-style: italic; }
+.story-hero__quote em { font-style: italic; }
 .story-hero__mark {
   position: absolute;
   top: -56px; left: 50%;
@@ -145,13 +151,13 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 88px;
   font-style: italic;
-  color: var(--accent);
   line-height: 1;
 }
 
 .story-hero__rule {
   width: 80px; height: 1px;
-  background: var(--accent);
+  background: #d9d3c4;
+  mix-blend-mode: difference;
   margin: 0 auto 40px;
   opacity: 0;
   animation: fadeUp 900ms 1000ms forwards;
@@ -162,11 +168,13 @@
   gap: 4px 28px;
   opacity: 0;
   animation: fadeUp 900ms 1200ms forwards;
+  /* See note on .story-hero__quote — blend at wrapper level. */
+  color: #d9d3c4;
+  mix-blend-mode: difference;
 }
 .story-hero__index a {
   display: inline-flex; align-items: baseline; gap: 8px;
   padding: 8px 4px;
-  color: var(--accent);
   transition: color 300ms;
 }
 .story-hero__index a span {
@@ -174,9 +182,8 @@
   font-size: 9px;
   opacity: 0.6;
 }
-.story-hero__index a:hover {
-  color: #ede4d2;
-  mix-blend-mode: difference;
+@media (hover: hover) {
+  .story-hero__index a:hover { color: #ede4d2; }
 }
 
 /* ============================================================
@@ -373,8 +380,10 @@
   color: var(--local-accent);
   transition: background 400ms, color 400ms;
 }
-.dual-card--umbra .dual-card__cta:hover { background: var(--local-accent); color: #0d0a08; }
-.dual-card--lucent .dual-card__cta:hover { background: var(--local-accent); color: #f4f1ea; }
+@media (hover: hover) {
+  .dual-card--umbra .dual-card__cta:hover { background: var(--local-accent); color: #0d0a08; }
+  .dual-card--lucent .dual-card__cta:hover { background: var(--local-accent); color: #f4f1ea; }
+}
 
 .duality__footer {
   max-width: 880px; margin: 64px auto 0;
@@ -477,7 +486,7 @@
   text-align: left;
   transition: background 400ms;
 }
-.spec-card:hover { background: var(--bg-soft); }
+@media (hover: hover) { .spec-card:hover { background: var(--bg-soft); } }
 .spec-card__num { color: var(--accent); margin-bottom: 16px; display: inline-block; }
 .spec-card__title {
   font-family: 'JetBrains Mono', monospace;

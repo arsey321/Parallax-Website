@@ -33,6 +33,42 @@
   /* ---------- Reduced motion ---------- */
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Cursor-driven hero split ----------
+     Moving the pointer left/right reveals more umbra or lucent.
+     Keeps the duality visible to first-time visitors without
+     requiring them to discover the mode toggle. */
+  const hero = document.getElementById('home');
+  if (hero && !prefersReduced) {
+    let targetSplit = 50;
+    let currentSplit = 50;
+    let heroRect = hero.getBoundingClientRect();
+
+    const refreshHeroRect = () => { heroRect = hero.getBoundingClientRect(); };
+    window.addEventListener('resize', refreshHeroRect, { passive: true });
+    window.addEventListener('scroll', refreshHeroRect, { passive: true });
+
+    const setTargetFromX = (clientX) => {
+      if (!heroRect.width) return;
+      const pct = ((clientX - heroRect.left) / heroRect.width) * 100;
+      targetSplit = Math.max(4, Math.min(96, pct));
+      if (hero.dataset.shifted !== '1') hero.dataset.shifted = '1';
+    };
+
+    hero.addEventListener('mousemove', (e) => setTargetFromX(e.clientX), { passive: true });
+    hero.addEventListener('touchstart', (e) => {
+      if (e.touches[0]) setTargetFromX(e.touches[0].clientX);
+    }, { passive: true });
+    hero.addEventListener('touchmove', (e) => {
+      if (e.touches[0]) setTargetFromX(e.touches[0].clientX);
+    }, { passive: true });
+
+    (function splitLoop() {
+      currentSplit += (targetSplit - currentSplit) * 0.14;
+      hero.style.setProperty('--split', currentSplit.toFixed(2) + '%');
+      requestAnimationFrame(splitLoop);
+    })();
+  }
+
   /* ---------- Parallax (cheap, GPU-friendly) ---------- */
   let lastY = 0;
   let ticking = false;
