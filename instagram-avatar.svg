@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Parallax Parfums · Instagram avatar · 1080x1080.
-     Logo is kept inside a 480-radius inscribed circle so the IG circular crop
-     never clips it. Render to PNG at 1:1 (1080x1080) for upload.
+     Logo + wordmark kept inside a 480-radius inscribed circle so the IG
+     circular crop never clips them. Render to PNG at 1:1 for upload.
      Requires parallax-logo-r2.svg alongside at render time. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      viewBox="0 0 1080 1080" width="1080" height="1080">
 
   <defs>
     <mask id="igLogo" maskUnits="userSpaceOnUse">
-      <image xlink:href="parallax-logo-r2.svg" x="290" y="290" width="500" height="500"/>
+      <image xlink:href="parallax-logo-r2.svg" x="360" y="210" width="360" height="360"/>
     </mask>
     <radialGradient id="bgGlow" cx="50%" cy="50%" r="60%">
       <stop offset="0%"  stop-color="#1a1411"/>
@@ -23,5 +23,11 @@
   <circle cx="540" cy="540" r="500" fill="none" stroke="#b87333" stroke-width="1" opacity="0.25"/>
 
   <!-- Logo, tinted warm bone -->
-  <rect x="290" y="290" width="500" height="500" fill="#ede4d2" mask="url(#igLogo)"/>
+  <rect x="360" y="210" width="360" height="360" fill="#ede4d2" mask="url(#igLogo)"/>
+
+  <!-- Wordmark -->
+  <text x="540" y="720" font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="78" fill="#ede4d2" text-anchor="middle" letter-spacing="8">PARALLAX</text>
+  <text x="540" y="780" font-family="'JetBrains Mono', Menlo, monospace"
+        font-size="22" fill="#a89881" text-anchor="middle" letter-spacing="10">PARFUMS</text>
 </svg>
